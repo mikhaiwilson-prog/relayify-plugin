@@ -1,6 +1,6 @@
 {
   "name": "@relay/design-system-mcp",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Bundled MCP server for the relayify plugin. Self-contained — no install step.",
   "type": "module",
   "main": "dist/index.js",
