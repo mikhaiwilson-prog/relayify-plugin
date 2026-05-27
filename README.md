@@ -65,26 +65,3 @@ This repo treats every commit as a new version (the plugin's `version` field is 
 │       └── README.md           ← consumer-facing plugin doc
 └── README.md                   ← this file
 ```
-
----
-
-## Building from source
-
-The plugin payload at `plugins/relayify/` is the output of a build pipeline that lives in the upstream `relay-front-end-design` repo. To rebuild from source:
-
-```bash
-git clone https://github.com/<your-org>/relay-front-end-design
-cd relay-front-end-design
-cd mcp-server && npm install && cd ..
-npm install
-npm run build:plugin            # → plugin-dist/
-# Then copy plugin-dist/ → this marketplace's plugins/relayify/
-```
-
-The upstream repo also produces a `.mcpb` artifact for Claude Desktop (Chat-mode-only install) via `npm run build:mcpb`. That artifact is **not** distributed through this marketplace — `.mcpb` and Claude Code plugins are different distribution formats.
-
----
-
-## Distribution scope
-
-This marketplace is intentionally narrow: one plugin (relayify). Future additions live in `plugins/<name>/` with an entry in `marketplace.json`.
