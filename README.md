@@ -1,10 +1,7 @@
 # relayify-plugin
-
-Claude Code marketplace that hosts the **relayify** plugin — generates front-end code in Relay Financial's design language.
-
 What the plugin provides:
 
-- **Skill** that auto-activates when Claude detects front-end work in a Relay project (TSX, HTML, marketing-site, app-surface). Walks through color direction → critic-subagent review → preview link → variant offer before generating.
+- **Skill** that auto-activates when Claude detects front-end work in a Relay project (TSX, HTML, marketing-site, etc). Walks through color direction → critic-subagent review → preview link → variant offer before generating.
 - **MCP server** with tools for component lookups, token queries, Storybook references, and code validation: `search_components`, `get_component`, `get_tokens`, `get_storybook_index`, `validate_usage`, plus six more.
 - **Curated registry** of 48 components (kpi-tile, status-pill, dashboard-chart, hero-section, pricing-card, sidebar-nav, data-table, …) with full anatomy, variants, idiomatic JSX + HTML examples.
 - **Style guide** covering TypeScript patterns, React patterns, and accessibility rules.
