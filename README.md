@@ -1,5 +1,5 @@
 # relayify-plugin
-What the plugin provides:
+this plugin can make website and visuals in the relay design language:
 ### Before:
 <img width="2000" height="1135" alt="image" src="https://github.com/user-attachments/assets/eb100b3c-e31e-4a6f-b3e4-63fdf7a668b7" />
 
