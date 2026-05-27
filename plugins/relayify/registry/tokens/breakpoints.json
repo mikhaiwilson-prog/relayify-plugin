@@ -1,0 +1,17 @@
+{
+  "source": "css-custom-properties",
+  "discoveredAt": "https://bonkers.relayfi.com (internal app)",
+  "tokens": {
+    "sm":   { "value": "544px",  "cssVar": "--size-breakpoint-sm" },
+    "md":   { "value": "768px",  "cssVar": "--size-breakpoint-md" },
+    "lg":   { "value": "1024px", "cssVar": "--size-breakpoint-lg" },
+    "xl":   { "value": "1280px", "cssVar": "--size-breakpoint-xl" },
+    "2xl":  { "value": "1440px", "cssVar": "--size-breakpoint-2xl" }
+  },
+  "viewportNames": {
+    "narrow":  { "mediaQuery": "(max-width: 768px)", "cssVar": "--size-viewport-narrow" },
+    "regular": { "mediaQuery": "(min-width: 768px)", "cssVar": "--size-viewport-regular" },
+    "wide":    { "mediaQuery": "(min-width: 1280px)", "cssVar": "--size-viewport-wide" }
+  },
+  "notes": "Tailwind-aligned breakpoints exposed as CSS custom properties. Available in the authenticated app shell; marketing pages do not expose these vars."
+}

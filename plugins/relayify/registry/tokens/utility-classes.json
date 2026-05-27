@@ -1,0 +1,110 @@
+{
+  "source": "observed-class-usage",
+  "discoveredOn": [
+    "https://relayfi.com/integrations/",
+    "https://relayfi.com/customers/",
+    "https://relayfi.com/accounts-payable/",
+    "https://relayfi.com/careers/"
+  ],
+  "categories": {
+    "background": {
+      "bg-green": {
+        "value": "#004822",
+        "tokenRef": "--color-background-fill-brand-secondary"
+      },
+      "bg-offwhite": {
+        "value": "#f1ecda",
+        "tokenRef": "approx --color-background-alt (#f4f1e7)"
+      },
+      "bg-offwhite-50": {
+        "value": "#f8f5ed",
+        "tokenRef": "lighter cream — close to --color-background-surface-default (#fcfbf8)"
+      },
+      "bg-relay-white-tint": {
+        "value": "#f8f6ed",
+        "tokenRef": "lighter cream surface — bespoke"
+      },
+      "main-gradient": {
+        "value": "linear-gradient including #016401",
+        "tokenRef": "approx --color-background-fill-brand-secondary (darkened evergreen)"
+      }
+    },
+    "color": {
+      "c-white": {
+        "value": "#f1ecda",
+        "tokenRef": "approx --color-background-alt (cream-on-dark used as 'white' for marketing)"
+      },
+      "c-green": {
+        "value": "#004822",
+        "tokenRef": "--color-text-brand-secondary"
+      },
+      "c-lime": {
+        "value": "#d5e27b",
+        "tokenRef": "--color-text-brand-primary"
+      },
+      "c-black": {
+        "value": "#25201f",
+        "tokenRef": "--color-text-default"
+      }
+    },
+    "layout": {
+      "t-center": {
+        "description": "text-align: center"
+      },
+      "d-flex": {
+        "description": "display: flex"
+      },
+      "d-block": {
+        "description": "display: block"
+      },
+      "narrow-container": {
+        "description": "Narrower max-width container variant (used on bill-pay sections)."
+      },
+      "container": {
+        "description": "Standard max-width container (~1200px) with horizontal gutters."
+      },
+      "mt10": {
+        "description": "margin-top: 10px"
+      },
+      "mt20": {
+        "description": "margin-top: 20px"
+      },
+      "mt40": {
+        "description": "margin-top: 40px"
+      },
+      "mb10": {
+        "description": "margin-bottom: 10px"
+      },
+      "mb20": {
+        "description": "margin-bottom: 20px"
+      }
+    },
+    "font": {
+      "font-radion": {
+        "value": "RadionB",
+        "tokenRef": "--text-font-radion"
+      },
+      "font-radion-demi": {
+        "value": "RadionB (Demi weight)",
+        "tokenRef": "--text-font-radion (weight modifier)"
+      },
+      "font-basis": {
+        "value": "BasisGrotesque",
+        "tokenRef": "--text-font-basis"
+      }
+    },
+    "visibility": {
+      "hide": {
+        "description": "display: none"
+      }
+    }
+  },
+  "icons": {
+    "library": "Phosphor Icons",
+    "classPattern": "ph ph-{name}",
+    "exampleSeen": "ph-list",
+    "discoveredOn": [
+      "https://relayfi.com/careers/"
+    ]
+  }
+}

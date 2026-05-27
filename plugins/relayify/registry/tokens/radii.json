@@ -1,0 +1,33 @@
+{
+  "source": "css-custom-properties + observed elements",
+  "discoveredAt": "https://relayfi.com/",
+  "tokens": {
+    "0": {"value": "0px", "cssVar": "--shape-radius-0"},
+    "50": {"value": "2px", "cssVar": "--shape-radius-50"},
+    "100": {"value": "4px", "cssVar": "--shape-radius-100"},
+    "150": {"value": "6px", "cssVar": "--shape-radius-150"},
+    "200": {"value": "8px", "cssVar": "--shape-radius-200"},
+    "300": {"value": "12px", "cssVar": "--shape-radius-300"},
+    "400": {"value": "16px", "cssVar": "--shape-radius-400"},
+    "round": {"value": "9999px", "cssVar": "--shape-radius-round"}
+  },
+  "borderWidths": {
+    "0": {"value": "0px", "cssVar": "--shape-border-0"},
+    "100": {"value": "1px", "cssVar": "--shape-border-100"},
+    "200": {"value": "2px", "cssVar": "--shape-border-200"},
+    "400": {"value": "4px", "cssVar": "--shape-border-400"}
+  },
+  "focusRings": {
+    "default": {"value": "#a7c9b7 3px solid", "cssVar": "--shape-focus-ring-default"},
+    "critical": {"value": "#ee8c9b 3px solid", "cssVar": "--shape-focus-ring-critical"}
+  },
+  "observedRadii": [
+    "60px (legacy .btn pill)",
+    "9999px / 9999.01px (rt-rounded-round buttons + pill CTAs)",
+    "12px (pricing detail-card)",
+    "12px 12px 0px 0px (card-tab top-pill)",
+    "8px (form text input — request-demo)",
+    "4px (rt-rounded-100 toggle nav surface)",
+    "50% (carousel arrow)"
+  ]
+}

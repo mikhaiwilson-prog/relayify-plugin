@@ -1,0 +1,69 @@
+{
+  "source": "css-custom-properties + observed elements",
+  "discoveredAt": "https://relayfi.com/",
+  "families": {
+    "basis": {"value": "BasisGrotesque", "cssVar": "--text-font-basis", "usage": "body text, labels, UI"},
+    "copernicus": {"value": "Copernicus", "cssVar": "--text-font-copernicus", "usage": "editorial accents"},
+    "radion": {"value": "RadionB", "cssVar": "--text-font-radion", "usage": "headings + display"}
+  },
+  "weights": {
+    "regular": {"value": "400", "cssVar": "--text-weight-regular"},
+    "medium": {"value": "500", "cssVar": "--text-weight-medium"},
+    "semibold": {"value": "600", "cssVar": "--text-weight-semibold"},
+    "bold": {"value": "700", "cssVar": "--text-weight-bold"}
+  },
+  "sizes": {
+    "25": {"value": "11px", "cssVar": "--text-size-25"},
+    "50": {"value": "12px", "cssVar": "--text-size-50"},
+    "75": {"value": "14px", "cssVar": "--text-size-75"},
+    "100": {"value": "16px", "cssVar": "--text-size-100"},
+    "200": {"value": "20px", "cssVar": "--text-size-200"},
+    "300": {"value": "25px", "cssVar": "--text-size-300"},
+    "400": {"value": "32px", "cssVar": "--text-size-400"},
+    "500": {"value": "40px", "cssVar": "--text-size-500"},
+    "600": {"value": "51px", "cssVar": "--text-size-600"},
+    "700": {"value": "64px", "cssVar": "--text-size-700"},
+    "800": {"value": "72px", "cssVar": "--text-size-800"},
+    "900": {"value": "81px", "cssVar": "--text-size-900"},
+    "1000": {"value": "96px", "cssVar": "--text-size-1000"}
+  },
+  "lineHeights": {
+    "tight": {"value": ".8", "cssVar": "--text-line-height-tight"},
+    "regular": {"value": "1.25", "cssVar": "--text-line-height-regular"},
+    "loose": {"value": "1.45", "cssVar": "--text-line-height-loose"}
+  },
+  "presets": {
+    "body.sm": {"shorthand": "400 12px/1.45 BasisGrotesque", "cssVar": "--text-body-sm"},
+    "body.md": {"shorthand": "400 14px/1.45 BasisGrotesque", "cssVar": "--text-body-md"},
+    "body.lg": {"shorthand": "400 16px/1.45 BasisGrotesque", "cssVar": "--text-body-lg"},
+    "body.xl": {"shorthand": "400 20px/1.45 BasisGrotesque", "cssVar": "--text-body-xl"},
+    "label.xs": {"shorthand": "700 11px/1.25 BasisGrotesque", "cssVar": "--text-label-xs"},
+    "label.sm": {"shorthand": "700 12px/1.25 BasisGrotesque", "cssVar": "--text-label-sm"},
+    "label.md": {"shorthand": "700 14px/1.25 BasisGrotesque", "cssVar": "--text-label-md"},
+    "label.lg": {"shorthand": "700 16px/1.25 BasisGrotesque", "cssVar": "--text-label-lg"},
+    "label.xl": {"shorthand": "700 20px/1.25 BasisGrotesque", "cssVar": "--text-label-xl"},
+    "label.light.sm": {"shorthand": "500 12px/1.25 BasisGrotesque", "cssVar": "--text-label-light-sm"},
+    "label.light.md": {"shorthand": "500 14px/1.25 BasisGrotesque", "cssVar": "--text-label-light-md"},
+    "label.light.lg": {"shorthand": "500 16px/1.25 BasisGrotesque", "cssVar": "--text-label-light-lg"},
+    "label.light.xl": {"shorthand": "500 20px/1.25 BasisGrotesque", "cssVar": "--text-label-light-xl"},
+    "heading.xs": {"shorthand": "600 16px/1.25 RadionB", "cssVar": "--text-heading-xs"},
+    "heading.sm": {"shorthand": "600 20px/1.25 RadionB", "cssVar": "--text-heading-sm"},
+    "heading.md": {"shorthand": "600 25px/1.25 RadionB", "cssVar": "--text-heading-md"},
+    "heading.lg": {"shorthand": "600 32px/1.25 RadionB", "cssVar": "--text-heading-lg"},
+    "heading.xl": {"shorthand": "600 40px/1.25 RadionB", "cssVar": "--text-heading-xl"},
+    "heading.2xl": {"shorthand": "600 51px/1.25 RadionB", "cssVar": "--text-heading-2xl"},
+    "heading.3xl": {"shorthand": "600 64px/1.25 RadionB", "cssVar": "--text-heading-3xl"},
+    "display.sm": {"shorthand": "700 40px/.8 RadionB", "cssVar": "--text-display-sm"},
+    "display.md": {"shorthand": "700 51px/.8 RadionB", "cssVar": "--text-display-md"},
+    "display.lg": {"shorthand": "700 64px/.8 RadionB", "cssVar": "--text-display-lg"},
+    "display.xl": {"shorthand": "700 72px/.8 RadionB", "cssVar": "--text-display-xl"},
+    "display.2xl": {"shorthand": "700 81px/.8 RadionB", "cssVar": "--text-display-2xl"},
+    "display.3xl": {"shorthand": "700 96px/.8 RadionB", "cssVar": "--text-display-3xl"}
+  },
+  "observedOversizedHeadings": [
+    "90px/700/RadionB on pricing 'COMPARE RELAY'S PLANS' h2 (responsive clamp)",
+    "100px/700/RadionB on pricing 'GETTING STARTED COSTS NOTHING' cta h2",
+    "81px/700/RadionB on pricing 'All-in-one money management' h1",
+    "128.4px (responsive 10.7vw) for home h2 marquee headline"
+  ]
+}

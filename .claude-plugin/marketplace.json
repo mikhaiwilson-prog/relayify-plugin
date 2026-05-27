@@ -1,0 +1,20 @@
+{
+  "name": "relayify-plugin",
+  "description": "Tools for generating front-end code in Relay Financial's design language. Hosts the relayify Claude Code plugin (skill + MCP server + curated registry + style guide).",
+  "owner": {
+    "name": "Mikhai Wilson"
+  },
+  "plugins": [
+    {
+      "name": "relayify",
+      "source": "./plugins/relayify",
+      "description": "Write front-end code (React/TSX or plain HTML) in Relay Financial's design language. Bundles 48 component specs, design tokens, a curated style guide, and an MCP server. The consumer skill auto-activates on Relay project work.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Relay Financial"
+      },
+      "category": "design-system",
+      "keywords": ["relay", "design-system", "telegraph", "fintech", "ui-components"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "extractedAt": "2026-05-26T00:00:00.000Z",
+  "fonts": [
+    { "family": "RadionB", "weight": "400", "style": "normal", "file": "RadionB-Regular.woff2", "sourceUrl": "https://relayfi.com/fonts/RadionB-Regular.woff2" },
+    { "family": "RadionB", "weight": "600", "style": "normal", "file": "RadionB-Demi.woff2", "sourceUrl": "https://relayfi.com/fonts/RadionB-Demi.woff2" },
+    { "family": "RadionB", "weight": "700", "style": "normal", "file": "RadionB-Bold.woff2", "sourceUrl": "https://relayfi.com/fonts/RadionB-Bold.woff2" },
+    { "family": "BasisGrotesque", "weight": "400", "style": "normal", "file": "basis-grotesque-regular-pro.woff2", "sourceUrl": "https://relayfi.com/fonts/basis-grotesque-regular-pro.woff2" },
+    { "family": "BasisGrotesque", "weight": "500", "style": "normal", "file": "basis-grotesque-medium-pro.woff2", "sourceUrl": "https://relayfi.com/fonts/basis-grotesque-medium-pro.woff2" },
+    { "family": "BasisGrotesque", "weight": "700", "style": "normal", "file": "basis-grotesque-bold-pro.woff2", "sourceUrl": "https://relayfi.com/fonts/basis-grotesque-bold-pro.woff2" },
+    { "family": "GalaxieCopernicus", "weight": "500", "style": "normal", "file": "GalaxieCopernicus-Medium.woff2", "sourceUrl": "https://relayfi.com/fonts/GalaxieCopernicus-Medium.woff2" },
+    { "family": "GalaxieCopernicus", "weight": "500", "style": "italic", "file": "GalaxieCopernicus-MediumItalic.woff2", "sourceUrl": "https://relayfi.com/fonts/GalaxieCopernicus-MediumItalic.woff2" },
+    { "family": "GalaxieCopernicus", "weight": "700", "style": "normal", "file": "GalaxieCopernicus-Bold.woff2", "sourceUrl": "https://relayfi.com/fonts/GalaxieCopernicus-Bold.woff2" },
+    { "family": "GalaxieCopernicus", "weight": "700", "style": "italic", "file": "GalaxieCopernicus-BoldItalic.woff2", "sourceUrl": "https://relayfi.com/fonts/GalaxieCopernicus-BoldItalic.woff2" },
+    { "family": "Tobias", "weight": "300", "style": "normal", "file": "Tobias-Light.woff2", "sourceUrl": "https://relayfi.com/fonts/Tobias-Light.woff2" },
+    { "family": "Tobias", "weight": "300", "style": "italic", "file": "Tobias-LightItalic.woff2", "sourceUrl": "https://relayfi.com/fonts/Tobias-LightItalic.woff2" },
+    { "family": "Tobias", "weight": "400", "style": "normal", "file": "Tobias-Regular.woff2", "sourceUrl": "https://relayfi.com/fonts/Tobias-Regular.woff2" },
+    { "family": "Tobias", "weight": "400", "style": "italic", "file": "Tobias-RegularItalic.woff2", "sourceUrl": "https://relayfi.com/fonts/Tobias-RegularItalic.woff2" },
+    { "family": "Tobias", "weight": "700", "style": "normal", "file": "Tobias-Bold.woff2", "sourceUrl": "https://relayfi.com/fonts/Tobias-Bold.woff2" },
+    { "family": "Tobias", "weight": "700", "style": "italic", "file": "Tobias-BoldItalic.woff2", "sourceUrl": "https://relayfi.com/fonts/Tobias-BoldItalic.woff2" }
+  ],
+  "_notes": "Inter and Grold were excluded from this bundle. Inter is explicitly banned by SKILL.md (body must be BasisGrotesque). Grold is not referenced anywhere in the registry, SKILL.md, or canonical reference."
+}

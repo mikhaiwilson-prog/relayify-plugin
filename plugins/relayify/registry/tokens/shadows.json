@@ -1,0 +1,27 @@
+{
+  "source": "css-custom-properties + observed elements",
+  "discoveredAt": "https://relayfi.com/",
+  "tokens": {
+    "sm": {
+      "value": "0px 1px 3px 0px #7871591f",
+      "cssVar": "--shadow-sm"
+    },
+    "md": {
+      "value": "0px 1px 3px -1px #78715930,0px 3px 18px -1px #78715929",
+      "cssVar": "--shadow-md"
+    },
+    "lg": {
+      "value": "0px 4px 12px 0px #78715940,0px 8px 30px -3px #7871592e,0px 30px 40px -3px #78715940",
+      "cssVar": "--shadow-lg"
+    },
+    "expressive": {
+      "value": "0px 12px 30px 0px #a0997ed1,0px 58px 44px -3px #a0997e66,0px 92px 50px -4px #a0997e29",
+      "cssVar": "--shadow-expressive"
+    }
+  },
+  "observed": [
+    "Card 3D stack: rgba(0,0,0,0.1) 0px 12px 30px 0px, rgba(0,0,0,0.05) 0px 58px 44px -3px (mirrors --shadow-expressive)",
+    "Card surface inset: rgba(0,0,0,0.06) 0px 0px 0px 1px inset (used as cardFront hairline)",
+    "Drawer left edge (SideDrawer): rgba(0,0,0,0.06) -4px 0px 8px 0px (overlay coming in from the right edge of the viewport)"
+  ]
+}
