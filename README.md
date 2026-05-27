@@ -80,8 +80,11 @@ This repo treats every commit as a new version (the plugin's `version` field is 
 └── README.md                   ← this file
 ```
 ## Another Eval, Recreate Amazon landing page
-### Claude Sonnet 4.6
+### Claude Sonnet 4.6 - *HTML*
 <img width="1418" height="806" alt="Screenshot 2026-05-27 at 4 55 21 PM" src="https://github.com/user-attachments/assets/50e9ac47-719e-459d-bc3b-dfb3f808776f" />
 
-### Claude Opus 4.7
+### Claude Opus 4.7 - *TSX*
+<p align="center">
+  <img width="1280" height="4250" alt="amazon-relay-panorama" src="https://github.com/user-attachments/assets/0bf9c06a-fb46-4b01-b077-2623ead526ec" />
+</p>
 
