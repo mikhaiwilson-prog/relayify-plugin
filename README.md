@@ -10,7 +10,7 @@ this plugin can make website and visuals in the relay design language:
 
 
 
-
+---
 
 What the plugin provides:
 
