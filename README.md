@@ -16,11 +16,11 @@ What the plugin provides:
 Inside Claude Code (Desktop or CLI):
 
 ```
-/plugin marketplace add <github-user>/relayify-plugin
+/plugin marketplace add mikhaiwilson-prog/relayify-plugin
 /plugin install relayify@relayify-plugin
 ```
 
-Replace `<github-user>` with the actual GitHub owner of this repo. After install, start a fresh Claude Code session — the skill is available as `/relayify:relayify` and auto-activates on Relay UI work, and the MCP tools register automatically.
+After install, start a fresh Claude Code session — the skill is available as `/relayify:relayify` and auto-activates on Relay UI work, and the MCP tools register automatically.
 
 To verify the MCP server activated, ask Claude:
 
