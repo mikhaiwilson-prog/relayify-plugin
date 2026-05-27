@@ -1,5 +1,18 @@
 # relayify-plugin
 What the plugin provides:
+### Before:
+<img width="2000" height="1135" alt="image" src="https://github.com/user-attachments/assets/eb100b3c-e31e-4a6f-b3e4-63fdf7a668b7" />
+
+### After:
+
+<img width="2940" height="1668" alt="image" src="https://github.com/user-attachments/assets/35e74ae4-dcbd-403b-b6dd-feb0254f244f" />
+
+
+
+
+
+
+What the plugin provides:
 
 - **Skill** that auto-activates when Claude detects front-end work in a Relay project (TSX, HTML, marketing-site, etc). Walks through color direction → critic-subagent review → preview link → variant offer before generating.
 - **MCP server** with tools for component lookups, token queries, Storybook references, and code validation: `search_components`, `get_component`, `get_tokens`, `get_storybook_index`, `validate_usage`, plus six more.
