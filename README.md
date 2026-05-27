@@ -10,14 +10,18 @@ What the plugin provides:
 
 ## Install
 
-Inside Claude Code (Desktop or CLI):
+### Inside Claude Code CLI
 
 ```
 /plugin marketplace add mikhaiwilson-prog/relayify-plugin
 /plugin install relayify@relayify-plugin
 ```
+### If you are using the desktop app 
 
-After install, start a fresh Claude Code session — the skill is available as `/relayify:relayify` and auto-activates on Relay UI work, and the MCP tools register automatically.
+Go to the Co-work or Code tab
+Customize -> hit the plus beside personal plugins -> create plugin -> add marketplace, then paste this repo link
+
+After install, start a fresh Claude Code session, the skill is available as `/relayify:relayify` and auto-activates on Relay UI work, and the MCP tools register automatically.
 
 To verify the MCP server activated, ask Claude:
 
