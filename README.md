@@ -84,6 +84,7 @@ This repo treats every commit as a new version (the plugin's `version` field is 
 
 ### Claude Opus 4.7 - *TSX*
 <p align="center">
-  <img width="1280" height="4250" alt="amazon-relay-panorama" src="https://github.com/user-attachments/assets/0bf9c06a-fb46-4b01-b077-2623ead526ec" />
+<img width="1157" height="3840" alt="amazon-relay-panorama" src="https://github.com/user-attachments/assets/be7beda2-1396-44d9-87c1-444529601cfe" />
 </p>
+
 
