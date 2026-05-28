@@ -201,10 +201,11 @@ If you guess a name like `MessageCircle`, the import will throw at runtime. If y
 6. **Read the relevant style-guide files** — `style-guide/typescript.md` + `style-guide/react-patterns.md` (TSX only), `style-guide/accessibility.md` for any interactive component (both modes).
 7. **Compose the code** (in your response, not on disk yet) — small, accessible, token-driven. In TSX: typed (no `any`), semantic HTML, visible focus rings. In HTML: same semantics + focus rings, just no TS rules.
 8. **Self-validate** — call `validate_usage(yourCode)` if the MCP server is connected. Fix every `error`. Document any `warning` you choose to ignore.
-9. **Dispatch a critic subagent** — see "Critic gate" below. Mandatory before any Write.
-10. **Save the file** with the `Write` tool, only after the critic has cleared the code or its blocking findings have been fixed.
-11. **Surface a preview link** — see "Preview + variant offer" below. The user must be able to see the output before answering the next question.
-12. **Ask: happy with this, or want a variant?** — see "Preview + variant offer." Offer 2–3 specific alternative directions. Do not generate the variant until the user picks one.
+9. **Dispatch a critic subagent** — see "Critic gate" below. Catches code-correctness failures (hex, fonts, hallucinated icons, surface mixing, scope creep, fabricated wordmark, etc.). Mandatory before any Write.
+10. **Dispatch a density review subagent** — see "Density review" below. Catches duplicate information and visual clutter that the critic gate doesn't enforce. Runs on the POST-critic-fix code. Mandatory before any Write.
+11. **Save the file** with the `Write` tool, only after both gates have cleared the code or their blocking findings have been fixed.
+12. **Surface a preview link** — see "Preview + variant offer" below. The user must be able to see the output before answering the next question.
+13. **Ask: happy with this, or want a variant?** — see "Preview + variant offer." Offer 2–3 specific alternative directions. Do not generate the variant until the user picks one.
 
 ## Color direction
 
@@ -267,15 +268,83 @@ OK — ship it.
 
 ### Handling the critic's response
 
-- **`OK — ship it.`** → call `Write` to save the file.
-- **Blocking findings** → fix EVERY blocking item in your proposed code, then save. One critic pass is normally enough. If you made substantive changes, run it once more.
+- **`OK — ship it.`** → proceed to the **Density review** gate (next section). The critic is the first of two mandatory reviews.
+- **Blocking findings** → fix EVERY blocking item in your proposed code, then re-run the critic if changes were substantive. One pass is normally enough. Only after the critic clears do you move on to density review.
 
-This step is **mandatory** before any `Write` to a code file. Skipping it is a process failure even when the output looks clean. The only legitimate skips:
+This step is **mandatory** before any `Write` to a code file. Skipping it is a process failure even when the output looks clean. The only legitimate skips (which also skip the density gate):
 
 - Pure registry/JSON edits, markdown docs, config files — non-code.
 - Trivial single-line fixes the user explicitly asked for (rename, typo).
 
-When you skip, say so explicitly in your reply: "Skipped critic gate — change was a single-line variable rename, not a code write."
+When you skip, say so explicitly in your reply: "Skipped critic + density gates — change was a single-line variable rename, not a code write."
+
+## Density review (mandatory)
+
+After the critic gate clears, dispatch a **second independent subagent** focused on information density and visual restraint. The critic checks if the code is *correct*; density review checks if the result is *coherent* — no duplicated data, no card-in-card-in-card nesting, no five badges crammed into one row, no headings competing for the same hierarchy slot.
+
+Relay's design principle: **hierarchy through scale, not boxes**. Generous whitespace and typography do the heavy lifting; borders and surface tints are sparing. Density review enforces this against the LLM tendency to "fill the canvas" with chrome.
+
+### How to call it
+
+Use the `Agent` tool with:
+
+- `subagent_type: "general-purpose"`
+- `model: "opus"` — same as critic; the density review is judgment-heavy and benefits from the largest model. Passing `"opus"` resolves to the latest Opus available.
+- `description: "Density review — <feature name>"`
+- The full prompt template below, with `[PROPOSED CODE]` replaced by the complete code you are about to save (post-critic-fix version)
+
+### The density-review prompt (use verbatim)
+
+```
+You are an independent design density critic for code about to be written in Relay Financial's design language. Code correctness has already been reviewed by a separate critic. Your job is to find DUPLICATE INFORMATION and VISUAL CLUTTER — design density failures, not code bugs. Be terse. No design opinions about aesthetic preference; only call out objective duplication and chrome overload.
+
+Relay's design principle: HIERARCHY THROUGH SCALE, NOT BOXES. Generous whitespace and typography do the heavy lifting; borders and surface tints are sparing. Single primary CTA per region. The LLM tendency to "fill the canvas" with chrome — cards inside cards, three CTAs where one would do, restated labels — is the enemy.
+
+Check against these failure modes:
+
+1. DUPLICATE INFORMATION
+   - Same data displayed twice in close proximity (a name in the avatar AND in nearby text; an amount in the row AND in a tooltip; a count in a tab AND in a separate header)
+   - Repeated CTAs that should be consolidated to one (a "Get started" button in the nav AND in the hero AND in a banner — pick one per region)
+   - Multiple sections delivering the same value prop with different words
+   - Labels that restate what the data already shows (a column header "$ Amount" above tabular-nums dollar values)
+   - Tooltips that repeat the visible label
+
+2. VISUAL CLUTTER
+   - Cards nested inside cards inside cards
+   - Borders, dividers, and surface tints stacked in close proximity (border-on-border-on-shadow)
+   - More than 2-3 icons / badges crowding a single row
+   - Decorative chrome that doesn't carry information (purely ornamental rounded shapes, gradients on flat surfaces, decorative svg blobs)
+   - Background tints stacked unnecessarily (a section with bg-surface-default INSIDE a page with bg-default — pick one)
+
+3. COMPETING HIERARCHY
+   - More than one "primary" CTA visible in the same region (Relay rule: one primary per region; others must be secondary/tertiary)
+   - Headings of equal visual weight when they're actually different semantic levels (h2 + h3 rendering at the same size suggests missing scale)
+   - Color used decoratively in 5+ places on one screen — lime is the accent, not the wallpaper
+   - All-caps text used for emphasis (Relay prefers RadionB weight over uppercase; uppercase is only for preheader labels)
+
+4. UNEARNED SPACE / OVER-DENSE BLOCKS
+   - A section with 1-2 items spread thin across a wide area (consider consolidating with a neighbor)
+   - A section with 20+ items packed into a narrow column (consider splitting or compacting)
+   - Hero copy longer than ~25 words on a marketing page — Relay marketing prefers short, confident lines
+   - Bullet lists when prose would carry the same information more naturally
+
+Code follows below. Review it and return findings.
+
+[PROPOSED CODE]
+
+Return findings as a bulleted list. Each bullet: ONE failure mode number (1–4) + a one-line description naming the specific element(s) at issue. If there are no blocking issues, return exactly the string:
+
+OK — clean.
+
+(nothing else)
+```
+
+### Handling the density review's response
+
+- **`OK — clean.`** → call `Write` to save the file.
+- **Blocking findings** → fix EVERY item, then save. Typical fixes: collapse a repeated CTA, remove a duplicate label, demote a competing h2 to h3, drop an outer Card wrapper, consolidate two near-identical sections into one. After substantive fixes, you may re-run the density review for a sanity check, but one pass is usually enough.
+
+This gate is **mandatory** alongside the critic gate. Both must clear before `Write`. The legitimate skips are the same as for the critic gate (non-code edits, trivial one-line fixes — declared explicitly in your reply).
 
 ## Preview + variant offer
 
