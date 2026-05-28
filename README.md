@@ -1,5 +1,6 @@
 # relayify-plugin
 this plugin can make websites and visuals in the relay design language:
+### Claude Sonnet 4.6 - *HTML*
 
 <img width="2940" height="1668" alt="image" src="https://github.com/user-attachments/assets/35e74ae4-dcbd-403b-b6dd-feb0254f244f" />
 
@@ -79,9 +80,7 @@ This repo treats every commit as a new version (the plugin's `version` field is 
 │       └── README.md           ← consumer-facing plugin doc
 └── README.md                   ← this file
 ```
-## Another Eval, Recreate Amazon landing page
-### Claude Sonnet 4.6 - *HTML*
-<img width="1418" height="806" alt="Screenshot 2026-05-27 at 4 55 21 PM" src="https://github.com/user-attachments/assets/50e9ac47-719e-459d-bc3b-dfb3f808776f" />
+## Another Eval, Recreate the landing page of a very well known ecommerce store 😉
 
 ### Claude Opus 4.7 - *TSX*
 <p align="center">
