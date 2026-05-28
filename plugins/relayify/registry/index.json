@@ -2289,7 +2289,8 @@
         "Custom fallback that doesn't match alt — initials should derive from alt"
       ],
       "framework": "Telegraph + React (Radix Avatar)",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-badge": {
       "name": "telegraph-badge",
@@ -2348,14 +2349,15 @@
         "size={1} — must be string"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-box": {
       "name": "telegraph-box",
       "category": "primitive",
       "source": "curated-telegraph",
       "telegraphComponent": "TelegraphBox",
-      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/components-overview--docs",
+      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/layout-box--docs",
       "import": "import { TelegraphBox } from '@relay/telegraph';",
       "variants": [
         {
@@ -2380,7 +2382,8 @@
         "Using Box where Stack or Flex would express intent better"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-button": {
       "name": "telegraph-button",
@@ -2450,7 +2453,8 @@
         "Hand-styled focus override — Telegraph handles focus rings; do not strip them"
       ],
       "framework": "Telegraph (Radix UI Themes-based) + React. Client + server safe.",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-card": {
       "name": "telegraph-card",
@@ -2493,7 +2497,8 @@
         "variant=\"elevated\" — actual name is \"classic\""
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-checkbox": {
       "name": "telegraph-checkbox",
@@ -2549,14 +2554,15 @@
         "Boolean treatment of indeterminate — check the literal \"indeterminate\" string"
       ],
       "framework": "Telegraph + React (Radix Checkbox)",
-      "confidence": 0.8
+      "confidence": 0.8,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-flex": {
       "name": "telegraph-flex",
       "category": "primitive",
       "source": "curated-telegraph",
       "telegraphComponent": "TelegraphFlex",
-      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/components-overview--docs",
+      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/layout-flex--docs",
       "import": "import { TelegraphFlex } from '@relay/telegraph';",
       "variants": [
         {
@@ -2581,14 +2587,15 @@
         "Using Flex where Stack would be simpler"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-heading": {
       "name": "telegraph-heading",
       "category": "primitive",
       "source": "curated-telegraph",
       "telegraphComponent": "TelegraphHeading",
-      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/components-typography--docs",
+      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/typography-heading--docs",
       "import": "import { TelegraphHeading } from '@relay/telegraph';",
       "variants": [
         {
@@ -2620,7 +2627,8 @@
         "Skipping levels (h1 → h3, no h2) — keep them sequential"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-icon-button": {
       "name": "telegraph-icon-button",
@@ -2686,7 +2694,8 @@
         "size={2}"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-link": {
       "name": "telegraph-link",
@@ -2719,7 +2728,8 @@
         "External links without target=\"_blank\" rel=\"noopener noreferrer\""
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-modal": {
       "name": "telegraph-modal",
@@ -2760,7 +2770,8 @@
         "Closing on outside click via setState — onOpenChange is the controlled handler"
       ],
       "framework": "Telegraph + React (Radix Dialog)",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-popover": {
       "name": "telegraph-popover",
@@ -2795,7 +2806,8 @@
         "Using Popover for tooltip-style hover labels"
       ],
       "framework": "Telegraph + React (Radix Popover)",
-      "confidence": 0.8
+      "confidence": 0.8,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-radio": {
       "name": "telegraph-radio",
@@ -2850,7 +2862,8 @@
         "Using individual Radio components without a RadioGroup parent"
       ],
       "framework": "Telegraph + React (Radix RadioGroup)",
-      "confidence": 0.75
+      "confidence": 0.75,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-select": {
       "name": "telegraph-select",
@@ -2890,14 +2903,15 @@
         "Native <option> children — must be TelegraphSelect.Item"
       ],
       "framework": "Telegraph + React. Radix Select underneath.",
-      "confidence": 0.75
+      "confidence": 0.75,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-stack": {
       "name": "telegraph-stack",
       "category": "primitive",
       "source": "curated-telegraph",
       "telegraphComponent": "TelegraphStack",
-      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/components-overview--docs",
+      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/layout-stack--docs",
       "import": "import { TelegraphStack } from '@relay/telegraph';",
       "variants": [
         {
@@ -2924,7 +2938,8 @@
         "Mixing Stack with hand-coded flexbox CSS — use Stack props for everything Stack handles"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-table": {
       "name": "telegraph-table",
@@ -2966,7 +2981,8 @@
         "Header cells via <td> — use ColumnHeaderCell so screen readers announce them"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.8
+      "confidence": 0.8,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-tabs": {
       "name": "telegraph-tabs",
@@ -3001,14 +3017,15 @@
         "Mismatched Trigger.value vs Content.value"
       ],
       "framework": "Telegraph + React (Radix Tabs)",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-text": {
       "name": "telegraph-text",
       "category": "primitive",
       "source": "curated-telegraph",
       "telegraphComponent": "TelegraphText",
-      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/components-typography--docs",
+      "storybookUrl": "https://storybook.relayfi.design/?path=/docs/typography-text--docs",
       "import": "import { TelegraphText } from '@relay/telegraph';",
       "variants": [
         {
@@ -3040,7 +3057,8 @@
         "as=\"p\" for a single word — use default span"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-text-area": {
       "name": "telegraph-text-area",
@@ -3079,7 +3097,8 @@
         "size={3}"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.8
+      "confidence": 0.8,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-text-input": {
       "name": "telegraph-text-input",
@@ -3122,7 +3141,8 @@
         "size={2}"
       ],
       "framework": "Telegraph + React",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-toggle": {
       "name": "telegraph-toggle",
@@ -3178,7 +3198,8 @@
         "onChange instead of onCheckedChange"
       ],
       "framework": "Telegraph + React (Radix Switch)",
-      "confidence": 0.8
+      "confidence": 0.8,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "telegraph-tooltip": {
       "name": "telegraph-tooltip",
@@ -3211,7 +3232,8 @@
         "Tooltip on a tooltip — never nest"
       ],
       "framework": "Telegraph + React (Radix Tooltip)",
-      "confidence": 0.8
+      "confidence": 0.8,
+      "idiomaticUsageHtml": "Telegraph primitives are React-only — no HTML equivalent. If you're in HTML mode (file ends in .html, no React in package.json), use a page-level pattern from this registry instead (e.g., kpi-tile, status-pill, dashboard-chart, data-table) — those have idiomaticUsageHtml examples. Telegraph primitives are TSX-only."
     },
     "testimonial-card": {
       "name": "testimonial-card",

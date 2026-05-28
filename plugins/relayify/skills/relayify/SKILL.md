@@ -117,7 +117,20 @@ If the MCP server is NOT connected, fall back to reading `registry/index.json` d
 
 ## Telegraph API at a glance
 
-**Telegraph components are FLAT, not compound.** There is no `<TelegraphCard.Body>`, no `<TelegraphPageLayout.Content>`, no `<TelegraphMenu.Item>`. If you find yourself writing a dot-subpath, you are inventing API. Use the flat name (`<TelegraphCard>`) and compose with `<TelegraphStack>` / `<TelegraphBox>` inside.
+**Most Telegraph components are FLAT, not compound.** There is no `<TelegraphCard.Body>`, no `<TelegraphPageLayout.Content>`, no `<TelegraphMenu.Item>`. For these, if you find yourself writing a dot-subpath, you are inventing API. Use the flat name (`<TelegraphCard>`) and compose with `<TelegraphStack>` / `<TelegraphBox>` inside.
+
+**Exception — Radix-derived composites DO expose sub-components**, because they wrap multi-part Radix primitives that require slot children to function (focus management, ARIA wiring, etc.). These specific components use the compound dot pattern as their canonical API:
+
+| Composite | Sub-components |
+|---|---|
+| `TelegraphModal` | `.Trigger`, `.Content`, `.Title`, `.Description`, `.Close` |
+| `TelegraphPopover` | `.Trigger`, `.Content`, `.Close` |
+| `TelegraphSelect` | `.Item` |
+| `TelegraphRadioGroup` | `.Item` |
+| `TelegraphTabs` | `.List`, `.Trigger`, `.Content` |
+| `TelegraphTable` | `.Header`, `.Body`, `.Row`, `.ColumnHeaderCell`, `.RowHeaderCell`, `.Cell` |
+
+These are documented in the `get_component()` MCP response for each — anything not in this table is inventing API. Layout primitives (`TelegraphBox`, `TelegraphStack`, `TelegraphFlex`), typography (`TelegraphHeading`, `TelegraphText`), and display atoms (`TelegraphButton`, `TelegraphBadge`, `TelegraphAvatar`, `TelegraphLink`, etc.) are FLAT — no sub-components, ever.
 
 **Variant vocabulary (memorize these — wrong names crash at runtime):**
 
@@ -214,7 +227,7 @@ Check against these failure modes:
 2. Inter / Roboto / system-ui font drift — body must be BasisGrotesque, display RadionB.
 3. shadcn defaults — `rounded-md`, `bg-gray-*`, `bg-blue-*`, default `<Card>`, default `<Button>`.
 4. Emoji standing in for a brand mark, an icon, or a Phosphor glyph (⚡, 🛠️, 📦, 🔨).
-5. Telegraph compound API misuse — Telegraph is flat. No `<TelegraphX.Subpath>` patterns.
+5. Telegraph compound API misuse — most Telegraph components are flat. The exceptions that DO use `.Subpath` are limited: Modal, Popover, Select, RadioGroup, Tabs, Table. Any other dot-subpath is invented API.
 6. Phosphor icon names that don't exist. Common gotchas: `MessageCircle` (use `ChatCircle`), `Search` (use `MagnifyingGlass`), `ChevronDown` (use `CaretDown`), `Edit` (use `PencilSimple`), `AlertCircle` (use `WarningCircle`).
 7. Surface mixing — marketing pill buttons on app pages, or app data-table density on marketing pages.
 8. Scope creep beyond what the user's prompt asked for. If the prompt says "just the trigger, not the open state" — the code must NOT build the open state. Match the requested scope exactly.
@@ -292,7 +305,7 @@ These read as AI slop, not Relay:
 - **Emoji as brand mark** — `⚡`, `🛠️`, `📦`, `🔨`. **This includes "restyling" the source's emoji in a colored box.** For internal Relay tools, use `registry/assets/icons/relay-logo-dark.svg` or `relay-logo-lime.svg` in the page chrome. The tool's own mark, if it has one, should be an SVG you import — never an emoji.
 - **Mechanical 1:1 component swap** — finding each source element and replacing it with a Telegraph component without rethinking what the page is for. This produces structurally-identical-but-uglier-than-source output. See "Translation, not transcription."
 - **Dark text on dark backgrounds (or light on light)** — when you commit to a dark theme, text/border/icon tokens have to flip with it. Verify contrast on every interactive element. If a card is invisible against its container, the render is broken.
-- **`<TelegraphX.Subpath>` compound APIs** — flat only. See "Telegraph API at a glance."
+- **`<TelegraphX.Subpath>` compound APIs on flat components** — Card, Heading, Text, Button, Badge, Stack, Box, Flex etc. have no sub-components. (Modal/Popover/Select/RadioGroup/Tabs/Table DO use dot-subpaths — they're the documented exceptions.) See "Telegraph API at a glance."
 - **`variant="primary"` / `"secondary"` / `"interactive"`** — these are not Telegraph variants. Use `solid` / `soft` / `outline` / `ghost`.
 - **Tailwind utilities competing with Telegraph styling** — Tailwind for *layout* (grid, flex, gap, padding) is fine. Tailwind for *colors and component styling* is not — use Telegraph props (`bg="surface-1"`, `color="accent-11"`).
 - **Single-column "card list"** — if the source has a grid of cards, the redesign must keep the grid. A vertical stack of cards with hairline separators is a list, not a gallery.
@@ -320,7 +333,7 @@ Walk this before you say you're done. If anything is unchecked, fix it.
 - [ ] **Color**: every color reference is a token or a deliberate tool-accent. Zero `bg-blue-600`, zero hex literals.
 - [ ] **Design move is real**: the page has a clear visual idea, not a mechanical swap of source components. If you can't say what the move is in one sentence, redesign.
 - [ ] **Contrast**: every text node, icon, and border is visible against its background. Dark text on dark surface = broken render.
-- [ ] **Telegraph API**: every `<TelegraphX>` tag is a real flat export. No `.Subpath` compounds. Variants and sizes use the canonical vocabulary (see "Telegraph API at a glance").
+- [ ] **Telegraph API**: every `<TelegraphX>` tag is a real export. Dot-subpaths only on the six documented composites (Modal/Popover/Select/RadioGroup/Tabs/Table) — never on flat primitives (Card/Heading/Text/Button/Badge/Stack/Box/Flex/etc.). Variants and sizes use the canonical vocabulary (see "Telegraph API at a glance").
 - [ ] **Icons**: every Phosphor import is a real name (verify against the catalog — `ChatCircle`, not `MessageCircle`).
 - [ ] **Layout**: a grid stays a grid; a card stays a card. The composition reads like the source's hierarchy, not a vertical list of orphans.
 - [ ] **Interactivity**: every clickable element is a `<button>` or polymorphic-button card. Visible focus ring. Keyboard path works.
