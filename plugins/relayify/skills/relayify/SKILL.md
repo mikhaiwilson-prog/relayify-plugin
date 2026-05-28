@@ -50,17 +50,36 @@ A redesign that looks like the source with restyled components has failed. A red
 
 For any **internal Relay tool** (Forge, the app, internal dashboards), the Relay parent brand belongs in the page chrome (top-left of the header, the favicon, the document title). The tool's own mark can appear adjacent or in the page hero. Both coexist — they don't compete for the same slot.
 
-Relay parent brand assets live in `registry/assets/icons/`:
-- `relay-logo-dark.svg` — for light backgrounds
-- `relay-logo-lime.svg` — for dark backgrounds
+**Use the real Relay wordmark. Do NOT invent your own.** The exact SVG paths are inlined below — paste them directly into your output as inline `<svg>` (preferred — survives any deployment, no asset-path resolution needed) or, if the consumer's project already serves the plugin's `registry/assets/icons/` directory, reference `relay-logo-dark.svg` / `relay-logo-lime.svg` via `<img src>`. The bundled files in `${CLAUDE_PLUGIN_ROOT}/registry/assets/icons/` are byte-identical to the snippets below.
 
-Use these directly (`<img src="/...svg">` or inline SVG). Don't redraw them, don't substitute emoji, don't recolor them with `recolor_asset` (which is for marketing-site icons).
+**On light backgrounds → use the evergreen (#004822) wordmark:**
+
+```html
+<svg width="121" height="62" viewBox="0 0 121 62" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Relay">
+  <path d="M14.7125 36.8154C19.9685 41.4223 35.5022 49.1116 35.7533 49.2289C37.7787 50.2173 34.5983 55.0587 33.0081 55.0252C30.2294 55.0252 13.5408 44.9738 7.89977 39.948C7.46457 43.7118 7.30786 47.5025 7.43104 51.2894C7.43104 52.5458 5.4224 52.5793 3.48069 52.6966C1.53898 52.8138 0.132925 52.6966 0.0324915 51.7082C-0.586846 32.1917 7.7156 12.8092 19.1482 3.51165C26.212 -2.23441 38.2975 -1.3968 36.5064 9.52574C35.0167 18.5553 26.279 31.0693 14.7459 36.8154H14.7125ZM9.33929 32.6105C22.0106 28.3889 33.5269 9.77703 29.8444 6.59408C26.1618 3.41113 13.909 14.7357 9.33929 32.6105ZM118.527 21.3361C116.97 20.7833 114.811 20.7498 114.526 22.0732C112.601 30.751 109.27 40.2663 105.37 39.0602C103.696 38.5241 102.625 36.6813 106.274 25.4907C106.676 24.2343 105.722 23.6312 104.299 23.0952C102.876 22.5591 101.269 22.8104 100.951 23.6982C97.0509 33.3141 93.9374 38.7754 91.1253 38.2225C87.9784 37.586 92.7155 27.6015 93.4185 26.1608C94.1216 24.7201 92.2636 23.983 91.3429 23.6145C90.4223 23.2459 88.9158 22.6093 88.3969 23.6145C88.196 23.9495 87.7441 24.8709 87.4763 25.407C87.6269 21.4367 83.8272 19.1583 79.7764 20.9173C72.3946 24.1338 68.4275 32.309 67.9253 37.1337C67.624 39.9648 68.3605 43.1477 71.1726 44.4879C76.4454 46.984 82.237 40.6684 83.8272 37.3514C83.6598 41.3218 86.2209 43.7676 89.4682 43.6503C93.904 43.4995 97.1011 39.1607 98.005 37.2342C97.3019 43.7843 103.512 46.2804 108.048 43.0975C105.364 48.2849 101.985 53.0812 98.005 57.3537C96.8667 58.6101 98.4402 60.1849 99.0094 60.7042C99.9467 61.6256 101.319 62.3795 102.123 61.7931C104.55 60.1179 109.321 54.7906 114.627 44.3539C117.553 38.0595 119.662 31.4163 120.904 24.5861C121.239 22.9109 120.753 22.09 118.594 21.3361H118.527ZM75.0728 38.3231C73.717 37.3682 75.0728 33.1801 76.6463 30.7008C78.8223 27.099 82.17 24.4353 83.6096 25.5745C85.8359 27.2497 82.7559 31.6891 81.1824 34.3192C79.609 36.9493 76.8304 39.5627 75.0728 38.3231ZM56.8609 34.1015C51.7388 42.5949 45.1437 45.2418 40.574 45.3758C39.2161 45.4417 37.86 45.2148 36.5974 44.7107C35.3347 44.2065 34.1951 43.4367 33.2555 42.4535C32.3159 41.4702 31.5983 40.2965 31.1513 39.0116C30.7043 37.7267 30.5383 36.3607 30.6646 35.0061C30.8703 31.9592 31.9185 29.0295 33.6921 26.5445C35.4656 24.0595 37.8947 22.117 40.7079 20.9341C46.2819 18.8568 51.3538 22.9276 50.2658 27.635C49.9892 29.0308 49.4373 30.3573 48.6425 31.537C47.8477 32.7168 46.8258 33.7262 45.6367 34.5061C44.4475 35.286 43.1149 35.8208 41.7168 36.0792C40.3187 36.3377 38.8831 36.3145 37.4941 36.0112C37.7786 39.3617 41.3608 41.2212 46.4159 38.6246C49.7637 36.9494 53.4796 33.5989 56.9948 25.1222C59.606 18.7563 63.3221 5.6727 64.9792 2.77454C65.4647 1.93692 67.1888 2.17147 68.6618 2.89182C70.1348 3.61217 71.6413 4.65079 71.1726 5.95748C68.1176 13.6802 65.7701 21.6649 64.159 29.8129C62.8403 36.4679 63.006 43.3322 64.6444 49.9157C65.0127 51.3062 63.2552 52.1773 62.1839 52.395C61.5372 52.5873 60.8465 52.571 60.2096 52.3485C59.5727 52.126 59.0219 51.7086 58.6352 51.1554C55.8566 46.1297 56.1578 39.948 56.8107 34.135L56.8609 34.1015ZM37.3769 32.2252C42.5324 33.9004 47.1021 28.2549 45.5119 25.9598C43.9217 23.6647 38.0632 26.1943 37.3769 32.2252Z" fill="#004822"/>
+</svg>
+```
+
+**On dark backgrounds (evergreen / dark surfaces) → use the lime (#D5E27B) wordmark:** identical path, change `fill="#004822"` to `fill="#D5E27B"`. That is the *only* difference between the two variants.
+
+**Sizing:** the SVG ships at 121×62. Scale via the `width`/`height` attributes or wrap in a styled container — 28px tall for app chrome, 40-56px for marketing nav. Keep aspect ratio (`viewBox` does the work). Apply a CSS color override via `fill="currentColor"` if the tool's color scheme needs dynamic theming, but **prefer the canonical fills unless you have a clear reason**.
+
+**Hard rules — break these and the brand mark is wrong:**
+
+- ❌ Generating your own SVG wordmark with letters that "look like" RELAY — even close lookalikes
+- ❌ Using an emoji in place of the wordmark (`⚡`, `🛠️`, the Phosphor `ph-cube`, etc.)
+- ❌ Setting the wordmark in BasisGrotesque or RadionB text (the actual mark is a hand-drawn custom shape, not a font)
+- ❌ Hand-tweaking the path data — paste the exact path string above
+- ❌ Recoloring beyond the two documented fills (`#004822` evergreen / `#D5E27B` lime). The wordmark has only those two canonical variants; do not use orange, lime-bold, gray, or any other color.
+- ❌ Skipping the wordmark "because the tool has its own mark" — for internal Relay tools, the Relay parent mark belongs in the page chrome AND the tool's own mark belongs in the hero / brand block. Both coexist.
+
+**For the tool's own mark** (Forge's anvil, etc.): if the source has a recognizable mark, preserve it. If you don't have access to its actual SVG, use a Phosphor icon that visually approximates it (e.g., `ph-anvil` for Forge) inside a colored tile that matches the tool's accent color — never an emoji standing alone.
 
 ### Concrete guardrails (when redesigning an existing tool)
 
 - **Preserve the tool's identity.** If the source has an orange accent, a custom mark, a dark theme — keep what makes it distinctive. You're applying Relay typography + components + tokens *over* the tool's personality, not replacing it with beige SaaS.
 - **Typography is non-negotiable.** Body text in BasisGrotesque. Display/headings in RadionB (or Tobias / GalaxieCopernicus for editorial moments). Never Inter, never Roboto, never system fonts in final output.
-- **Brand mark survives.** Whatever logo / wordmark / icon the source uses, the redesign must include a recognizable equivalent. An emoji placeholder (⚡, 🛠️) is not a logo.
+- **Brand mark survives.** Whatever logo / wordmark / icon the source uses, the redesign must include a recognizable equivalent. An emoji placeholder (⚡, 🛠️) is not a logo. **The Relay parent wordmark, when used, MUST be the inline SVG documented in the "Brand hierarchy" section above — paste the canonical path data, do not draw your own.**
 - **Color choice is intentional.** Relay's brand is dark-green + lime, but internal tools commonly carry their own accent (forge = orange, etc.). Either commit to Relay brand colors *or* commit to the tool's accent — never default to Telegraph's neutral grays because you can't decide.
 - **Hierarchy through scale, not boxes.** Big headings, breathable spacing, a single primary CTA per region. Don't fill every region with borders and equal-weight content.
 
@@ -233,6 +252,7 @@ Check against these failure modes:
 8. Scope creep beyond what the user's prompt asked for. If the prompt says "just the trigger, not the open state" — the code must NOT build the open state. Match the requested scope exactly.
 9. Missing accessibility — aria-label on icon-only buttons, role/aria on dialogs, keyboard path on every clickable element, tabular-nums on numbers that can change, focus-visible rings.
 10. Brand hierarchy — internal Relay tools must show the Relay parent mark in the page chrome (top-left or equivalent), not just the tool's own mark.
+11. Fabricated Relay wordmark — the parent mark MUST be the canonical inline SVG documented in the "Brand hierarchy" section (path data starts `M14.7125 36.8154…`). Generating a custom RELAY-like wordmark, using a font to spell "Relay," or substituting an emoji is a hard fail. Check that the SVG path data matches and the fill is either `#004822` or `#D5E27B`.
 
 Code follows below. Review it and return findings.
 
@@ -302,7 +322,8 @@ These read as AI slop, not Relay:
 - **shadcn/ui defaults** — `rounded-md` cards, default border colors, default `Card` from shadcn. Telegraph is the system; do not import or imitate shadcn primitives.
 - **Stock Tailwind brand colors** — `bg-blue-600`, `text-indigo-500`, `bg-lime-400 to-lime-600` gradients. Use Telegraph tokens or the tool's intentional accent. No `from-X to-Y` gradient CTAs.
 - **Inter / Roboto / system font stacks** — body text must be BasisGrotesque, headings RadionB. If the render is missing fonts, that's a *render bug to fix*, not a license to fall back to `-apple-system`.
-- **Emoji as brand mark** — `⚡`, `🛠️`, `📦`, `🔨`. **This includes "restyling" the source's emoji in a colored box.** For internal Relay tools, use `registry/assets/icons/relay-logo-dark.svg` or `relay-logo-lime.svg` in the page chrome. The tool's own mark, if it has one, should be an SVG you import — never an emoji.
+- **Emoji as brand mark** — `⚡`, `🛠️`, `📦`, `🔨`. **This includes "restyling" the source's emoji in a colored box.** For internal Relay tools, use the canonical inline SVG documented in "Brand hierarchy" (paste the path data directly into your output). The tool's own mark, if it has one, should be an SVG you import — never an emoji.
+- **Generated / fabricated Relay wordmark** — drawing your own "RELAY" letters in SVG, setting it in BasisGrotesque or RadionB text, or copying a path that *looks* like the wordmark. The wordmark is a hand-drawn custom shape with one canonical path string; paste it verbatim from the "Brand hierarchy" section. Any other approach is wrong even if the result looks close.
 - **Mechanical 1:1 component swap** — finding each source element and replacing it with a Telegraph component without rethinking what the page is for. This produces structurally-identical-but-uglier-than-source output. See "Translation, not transcription."
 - **Dark text on dark backgrounds (or light on light)** — when you commit to a dark theme, text/border/icon tokens have to flip with it. Verify contrast on every interactive element. If a card is invisible against its container, the render is broken.
 - **`<TelegraphX.Subpath>` compound APIs on flat components** — Card, Heading, Text, Button, Badge, Stack, Box, Flex etc. have no sub-components. (Modal/Popover/Select/RadioGroup/Tabs/Table DO use dot-subpaths — they're the documented exceptions.) See "Telegraph API at a glance."

@@ -1,7 +1,7 @@
 {
   "name": "relayify",
   "description": "Write front-end code (React/TSX or plain HTML) in Relay Financial design language. Bundles 70 component specs (48 page-level patterns + 22 Telegraph primitives), design tokens, a curated style guide, and an MCP server that any coding agent can query. The consumer skill auto-activates on Relay project work.",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": {
     "name": "Relay Financial"
   },
